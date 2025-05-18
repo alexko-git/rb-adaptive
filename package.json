@@ -2,7 +2,11 @@
   "name": "rb_test",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run sass:watch\"",
+    "server": "nodemon index.js",
+    "sass:watch": "sass --watch src/scss/index.scss public/styles/index.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +15,10 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nodemon": "^3.1.10",
+    "sass": "^1.88.0"
   }
 }

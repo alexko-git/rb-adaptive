@@ -1,0 +1,215 @@
+@use './variables.scss';
+
+@mixin products_layout_labels {
+    color: #FFFFFF;
+    span {
+        padding: 8px;
+        border-radius: 50px;
+        font-size: 12px;
+    }
+    .products_layout_labels_discount {
+        background-color: variables.$labels_discount_bg;
+    }
+    .products_layout_labels_good_of_day {
+        background-color: variables.$labels_good_of_day;
+    }
+    .products_layout_labels_sale {
+        background-color: variables.$labels_sale_bg;
+    }
+    .products_layout_labels_top {
+        background-color: variables.$labels_top_bg;
+    }
+}
+
+@mixin products_layout_button($border-color: #FFFFFF) {
+    button {
+        all: unset;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 0.5rem;
+        color: variables.$buttons_text_color;
+        background-color: variables.$buttons_bg;
+        font-size: 12px;
+        border: 1px solid transparent;
+    }
+    button:active {
+        border: 1px solid $border-color;
+    }
+}
+
+@mixin products_layout {
+    .products_layout_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        font-family: variables.$product_layout_font;
+        .products_layout_header {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            h3 {
+                color: #FFFFFF;
+            }
+            div {
+                min-width: 30px;
+            }
+            img {
+                display: block;
+                object-fit: contain;
+                width: 18px;
+                height: 18px;
+                transition: width 1s ease;
+                cursor: pointer;
+            }
+            img:hover {
+                width: 22px;
+            }
+        }
+        .products_layout_footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            .products_layout_labels {
+                @include products_layout_labels;
+            }
+            .products_layout_price_and_button {
+                display: flex;
+                .products_layout_price {
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #FFFFFF;
+                    padding: 4px;
+                }
+                @include products_layout_button;
+            }
+        }
+    }
+}
+
+@mixin products_layout_small {
+    .products_layout_small_container {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        height: 60%;
+        width: 100%;
+        font-family: variables.$product_layout_font;
+        .products_layout_labels {
+            @include products_layout_labels;
+            padding: 1rem 0.5rem;
+        }
+        .products_layout_small_img_container {
+            min-width: 30px;
+            padding: 1rem 0;
+            img {
+                display: block;
+                object-fit: contain;
+                width: 18px;
+                height: 18px;
+                transition: width 1s ease;
+                cursor: pointer;
+            }
+            img:hover {
+                width: 22px;
+            }
+        }
+    }
+    .products_layout_small_description {
+        font-family: variables.$product_layout_font;
+        .products_layout_small_text {
+            padding: 0 0.5rem 1rem 0.5rem;
+            color: variables.$product_layout_small_font_color;
+        }
+        .products_layout_small_price_and_button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .products_layout_small_price {
+                padding-bottom: 0.5rem;
+                font-weight: 700;
+                font-size: 20px;
+                color: variables.$product_layout_small_font_color;
+            }
+        }
+        @include products_layout_button(#444444);
+    }
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 154px);
+    gap: 10px;
+    padding: 4rem 8rem;
+    background-color: variables.$products_container_bg;
+
+    .product {
+        background-color: aliceblue;
+    }
+
+    .products_peas {
+        position: relative;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        @include products_layout;
+    }
+
+    .products_blueberries {
+        position: relative;
+        grid-column: 3 / span 2;
+        grid-row: 1;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        @include products_layout;
+    }
+
+    .products_carrots {
+        position: relative;
+        grid-column: 3 / span 2;
+        grid-row: 2;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        @include products_layout;
+    }
+
+    .products_popcorn {
+        position: relative;
+        grid-column: 5;
+        grid-row: 1 / span 2;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 60%;
+        }
+        @include products_layout_small;
+    }
+
+    .products_icecream {
+        position: relative;
+        grid-column: 6;
+        grid-row: 1 / span 2;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 60%;
+        }
+        @include products_layout_small;
+    }
+}
