@@ -5,7 +5,6 @@
     justify-content: center;
     align-items: center;
     height: 517px;
-    padding: 4rem 8rem;
     img {
         object-fit: cover;
         width: 100%;
@@ -37,5 +36,23 @@
                 object-fit: contain;
             }
         }
+    }
+}
+
+@media screen and (max-width: variables.$mobile_breakpoint) {
+    .video_container {
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (min-width: variables.$tablet_breakpoint) {
+    .video_container {
+        padding: 4rem 8rem;
+    }
+}
+
+@media screen and (min-width: variables.$desktop_breakpoint) {
+    .video_container {
+        padding: 4rem 8rem;
     }
 }

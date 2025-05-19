@@ -1,0 +1,31 @@
+@use './variables.scss';
+
+.slider {
+    padding: 0 4rem;
+    overflow: hidden;
+    .slider_elements {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, variables.$slider_item_width);
+        grid-template-rows: repeat(1, 410px);
+        transition: transform 1s ease;
+    }
+    .slider_buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        .slider_button {
+            all: unset;
+            height: 8px;
+            width: 8px;
+            background-color: variables.$buttons_slider_idle_bg;
+            margin: 0 0.5rem;
+            border-radius: 50px;
+        }
+        .slider_button.active {
+            background-color: variables.$buttons_slider_active_bg;
+        }
+    }
+}
+

@@ -1,9 +1,17 @@
 $products_container_bg: #F2F2F2;
 $buttons_bg: #18C576;
 $buttons_text_color: #FEFEFE;
+$buttons_slider_idle_bg: #E6E6E6;
+$buttons_slider_active_bg: #1E1E1E;
 $labels_top_bg: #AC59F1;
 $labels_discount_bg: #18C576;
 $labels_good_of_day: #FFA726;
 $labels_sale_bg: #39B0F4;
 $product_layout_font: sans-serif;
 $product_layout_small_font_color: #444444;
+
+$slider_item_width: 200px;
+
+$desktop_breakpoint: 1280px;
+$tablet_breakpoint: 768px;
+$mobile_breakpoint: 767px;
