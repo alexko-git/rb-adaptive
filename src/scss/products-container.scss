@@ -9,15 +9,19 @@
         font-size: 12px;
     }
     .products_layout_labels_discount {
+        display: inline-block;
         background-color: variables.$labels_discount_bg;
     }
     .products_layout_labels_good_of_day {
+        display: inline-block;
         background-color: variables.$labels_good_of_day;
     }
     .products_layout_labels_sale {
+        display: inline-block;
         background-color: variables.$labels_sale_bg;
     }
     .products_layout_labels_top {
+        display: inline-block;
         background-color: variables.$labels_top_bg;
     }
 }

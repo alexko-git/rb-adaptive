@@ -4,10 +4,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run sass:watch\"",
+    "start": "node index.js",
+    "start:dev": "concurrently \"npm run server\" \"npm run sass:watch\"",
     "server": "nodemon index.js",
-    "sass:watch": "sass --watch src/scss/index.scss public/styles/index.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass:build": "sass src/scss/index.scss public/styles/index.css",
+    "sass:watch": "sass --watch src/scss/index.scss public/styles/index.css"
   },
   "keywords": [],
   "author": "",
